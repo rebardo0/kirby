@@ -1,0 +1,77 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+
+    <center>
+    <h2>Elija su profesion</h2>
+    
+    <script>
+    let profesion, stripper;
+    </script>
+
+    <label for="profesion">Elija su profesion:</label><br>
+    <select id="profesion" onchange="updateImage()">
+        <option value="">Seleccione una opcion</option>
+        <option value="oliver">oliver</option>
+        <option value="eduardo">eduardo</option>
+        <option value="vendedor de panocha">vendedor de panocha</option>
+        <option value="informatico">informatico</option>
+        <option value="cuidador del asilo de la antonia">cuidador del asilo de la antonia</option>
+        <option value="cuidar el culito de la madre del manuel">cuidar el culito de la madre del manuel</option>
+        <option value="stripper">stripper</option>
+    </select><br><br>
+
+    <img id="selectedImage" src="kirby.jpg" width="100" height="100" style="display:none;">
+
+    <script>
+        function updateImage() {
+            const imageMap = {
+                oliver: "kirby.jpg",
+                eduardo: "esqueleto.gif"
+            };
+
+            const selector = document.getElementById("profesion");
+            const image = document.getElementById("selectedImage");
+            const selectedValue=selector.value
+
+            console.log("Opción seleccionada:", selectedValue);
+
+
+            image.src = imageMap[selectedValue] || "";
+            image.style.display = selectedValue && imageMap[selectedValue] ? "block" : "none";
+        }
+    </script>
+    
+
+    <form id="formulario">
+        <label for="nombre">Nombre:</label><br>
+        <input type="text" id="nombre"><br><br>
+
+        <label for="apellidos">Apellidos:</label><br>
+        <input type="text" id="apellidos"><br><br>
+
+        <label for="email">Email:</label><br>
+        <input type="email" id="email"><br><br>
+
+        <label for="fecha">Fecha:</label><br>
+        <input type="date" id="fecha"><br><br>
+
+        <label for="color">Color favorito:</label><br>
+        <input type="color" id="color"><br><br>
+
+        <label for="terminos">Acepto los terminos y condiciones:</label>
+        <input type="checkbox" id="terminos"><br><br>
+
+
+    </form>
+
+    <img src="esqueleto.gif" alt=""><br>
+    </center>
+        
+</body>
+</html>
